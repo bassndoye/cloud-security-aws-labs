@@ -1,8 +1,8 @@
 # Cloud Security AWS environement
-This oject deploy EKS,EC2,S3,IAM and VPC without security best practices. This environement can be used to show the importance of cloud security posture management and cloud worload protection solutions
+This terraform project deploy EKS,EC2,S3,IAM and VPC without security best practices. This environement can be used to show the importance of cloud security posture management and cloud worload protection solutions
 
 # Topology
-![alt text] ../topology.PNG
+![Alt text](../topology.png?raw=true "Title")
 
 # Requirement
 - AWS CLI access to the cloud account
