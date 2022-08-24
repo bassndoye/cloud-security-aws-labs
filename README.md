@@ -10,8 +10,8 @@ This terraform project deploy EKS,EC2,S3,IAM and VPC without security best pract
 - Terraform installed
 
 # Environment
-The terraform project deploy the following resource on EC2
-- The network infrastructure. VPC, subnets, IGW, route tables, security groups
+The terraform project deploy the following resources
+- The network infrastructure: VPC, subnets, IGW, route tables, security groups
 - IAM roles and Policies
 - S3 bucket publicaly accessible
 - MongoDB installed on an EC2 instance. During the boot, we enable mongodb authentication, take a backup snapshot and store it on the S3 bucket. The ec2 instance has an instance profile which allow full access to aws ec2.
