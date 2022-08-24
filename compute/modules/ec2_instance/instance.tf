@@ -37,33 +37,3 @@ data "template_file" "user-data-file" {
     s3Backet = var.s3_bucket
   }
 }
-
-resource "aws_instance" "remoteServer" {
-  ami                         = "ami-05a8c865b4de3b127"
-  associate_public_ip_address = "true"
-
-  iam_instance_profile                 = var.instance_profile
-  instance_type                        = "t2.micro"
-  key_name                             = var.ssh_key_name
-
-
-  root_block_device {
-    delete_on_termination = "true"
-    encrypted             = "false"
-    volume_size           = "8"
-    volume_type           = "gp2"
-  }
-
-  source_dest_check = "true"
-  subnet_id         = var.subnet1_id
-
-  tags = {
-    Name = "remoteServer-${var.random_id}"
-  }
-
-
-
-  tenancy                = "default"
-  vpc_security_group_ids = [var.sg_id]
-}
-
