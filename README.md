@@ -129,3 +129,18 @@ curl -s -k -m 3 -H "Authorization: Bearer $TOKEN" https://${KUBERNETES_SERVICE_H
 
 
 ```
+# Destroy environement
+
+```sh
+cd cloud-security-aws-environement
+cd scanners
+terraform destroy
+cd kubernetes
+terraform destroy
+cd eks
+terraform destroy
+cd compute
+terraform destroy
+cd infra
+terraform destroy
+```
