@@ -57,6 +57,9 @@ resource "kubernetes_manifest" "persistentvolumeclaim_mysql_pv_claim" {
       }
     }
   }
+  depends_on = [
+    helm_release.aws-ebs-csi-driver
+  ]
 }
 
 resource "kubernetes_manifest" "deployment_wordpress_mysql" {
