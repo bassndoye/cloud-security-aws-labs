@@ -1,5 +1,5 @@
 resource "aws_instance" "mongoDbServer" {
-  ami                         = "ami-05a8c865b4de3b127"
+   ami                  =  var.amiid[var.region]
   associate_public_ip_address = "true"
 
   iam_instance_profile                 = var.instance_profile
