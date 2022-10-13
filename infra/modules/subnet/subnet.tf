@@ -12,6 +12,7 @@ resource "aws_subnet" "subnet1" {
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
   vpc_id                                         = var.vpc_id
+  availability_zone                              = data.aws_availability_zones.available.names[0]
 }
 
 resource "aws_subnet" "subnet2" {
@@ -27,6 +28,7 @@ resource "aws_subnet" "subnet2" {
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
   vpc_id                                         = var.vpc_id
+  availability_zone                              = data.aws_availability_zones.available.names[0]
 }
 
 resource "aws_subnet" "subnet3" {
@@ -42,4 +44,5 @@ resource "aws_subnet" "subnet3" {
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
   vpc_id                                         = var.vpc_id
+  availability_zone                              = data.aws_availability_zones.available.names[1]
 }
