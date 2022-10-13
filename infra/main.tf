@@ -46,6 +46,7 @@ module "vpc" {
   subnet1_id = module.subnet.subnet1_id
   subnet2_id = module.subnet.subnet2_id
   subnet3_id = module.subnet.subnet3_id
+  depends_on = [module.igw, module.subnet]
 }
  module "iam" {
   source = "./modules/iam"
@@ -54,4 +55,5 @@ module "vpc" {
  module "s3" {
   source = "./modules/s3"
   random_id = random_integer.unique_id.id
+  depends_on = [module.iam]
 }
