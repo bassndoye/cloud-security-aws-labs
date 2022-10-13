@@ -17,6 +17,7 @@ resource "random_integer" "unique_id" {
 
 module "ec2_instance" {
   source = "./modules/ec2_instance"
+  region = data.terraform_remote_state.infra.outputs.infra_region
   random_id =  random_integer.unique_id.id
   vpc_id = data.terraform_remote_state.infra.outputs.infra_vpc_id
   subnet1_id = data.terraform_remote_state.infra.outputs.infra_subnet1_id
