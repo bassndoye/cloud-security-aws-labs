@@ -18,4 +18,7 @@ resource "aws_eks_cluster" "Custom-EKS-Cluster" {
     public_access_cidrs     = ["0.0.0.0/0"]
     subnet_ids              = [data.terraform_remote_state.infra.outputs.infra_subnet1_id, data.terraform_remote_state.infra.outputs.infra_subnet2_id, data.terraform_remote_state.infra.outputs.infra_subnet3_id]
   }
+  tags = {
+    yor_trace = "2a597f97-bf83-4195-a3d0-306e67555d6e"
+  }
 }

@@ -1,11 +1,11 @@
 resource "aws_instance" "mongoDbServer" {
-   ami                  =  var.amiid[var.region]
+  ami                         = var.amiid[var.region]
   associate_public_ip_address = "true"
 
-  iam_instance_profile                 = var.instance_profile
-  instance_type                        = "t2.micro"
-  key_name                             = var.ssh_key_name
-  private_ip = "172.31.13.230"
+  iam_instance_profile = var.instance_profile
+  instance_type        = "t2.micro"
+  key_name             = var.ssh_key_name
+  private_ip           = "172.31.13.230"
 
   root_block_device {
     delete_on_termination = "true"
@@ -18,7 +18,8 @@ resource "aws_instance" "mongoDbServer" {
   subnet_id         = var.subnet1_id
 
   tags = {
-    Name = "Custom-mongoDbServer-${var.random_id}"
+    Name      = "Custom-mongoDbServer-${var.random_id}"
+    yor_trace = "eae005aa-8491-4505-b1bd-ea611da40f9a"
   }
 
   tags_all = {
@@ -26,7 +27,7 @@ resource "aws_instance" "mongoDbServer" {
   }
 
   tenancy                = "default"
-  user_data              =  "${data.template_file.user-data-file.rendered}"
+  user_data              = "${data.template_file.user-data-file.rendered}"
   vpc_security_group_ids = [var.sg_id]
 }
 
