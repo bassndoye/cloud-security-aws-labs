@@ -14,11 +14,14 @@ resource "aws_eks_node_group" "Custom-EKS-NodeGrp" {
     min_size     = "1"
   }
 
-  subnet_ids              = [data.terraform_remote_state.infra.outputs.infra_subnet1_id, data.terraform_remote_state.infra.outputs.infra_subnet2_id, data.terraform_remote_state.infra.outputs.infra_subnet3_id]
+  subnet_ids = [data.terraform_remote_state.infra.outputs.infra_subnet1_id, data.terraform_remote_state.infra.outputs.infra_subnet2_id, data.terraform_remote_state.infra.outputs.infra_subnet3_id]
 
   update_config {
     max_unavailable = "1"
   }
 
   version = "1.23"
+  tags = {
+    yor_trace = "d5e4a68a-4e85-407f-8d9b-055975e8ab2b"
+  }
 }

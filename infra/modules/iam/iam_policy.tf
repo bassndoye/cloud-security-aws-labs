@@ -15,6 +15,9 @@ resource "aws_iam_policy" "Custom-MongoDBPolicy" {
   "Version": "2012-10-17"
 }
 POLICY
+  tags = {
+    yor_trace = "4058fadb-2f7c-499f-bd7c-8dc59a95cdd5"
+  }
 }
 
 
@@ -46,4 +49,7 @@ resource "aws_iam_policy" "Custom-eksWorkNodeEBSPolicy" {
   ]
 }
 POLICY
+  tags = {
+    yor_trace = "a0d33c3a-af59-4e52-b281-df286e004e32"
+  }
 }

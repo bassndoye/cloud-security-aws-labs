@@ -1,7 +1,8 @@
 
 resource "aws_subnet" "subnet1" {
   tags = {
-    Name = "testSubnet1-${var.random_id}"
+    Name      = "testSubnet1-${var.random_id}"
+    yor_trace = "5dff5622-e28b-4acd-8893-c2def48e9915"
   }
   assign_ipv6_address_on_creation                = "false"
   cidr_block                                     = "172.31.0.0/20"
@@ -17,7 +18,8 @@ resource "aws_subnet" "subnet1" {
 
 resource "aws_subnet" "subnet2" {
   tags = {
-    Name = "testSubnet2-${var.random_id}"
+    Name      = "testSubnet2-${var.random_id}"
+    yor_trace = "6a3f7fbe-9c77-4bdd-adc6-a62eee784e5e"
   }
   assign_ipv6_address_on_creation                = "false"
   cidr_block                                     = "172.31.32.0/20"
@@ -33,7 +35,8 @@ resource "aws_subnet" "subnet2" {
 
 resource "aws_subnet" "subnet3" {
   tags = {
-    Name = "testSubnet3-${var.random_id}"
+    Name      = "testSubnet3-${var.random_id}"
+    yor_trace = "7ad06c96-6f29-41e3-a2dd-e23d4e2a53a9"
   }
   assign_ipv6_address_on_creation                = "false"
   cidr_block                                     = "172.31.16.0/20"
